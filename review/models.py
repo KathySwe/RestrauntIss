@@ -9,7 +9,9 @@ class Category(models.Model):
     Cid = models.IntegerField(default=0)
 
     def __str__(self):
-        return '{}/{}'.format(self.Cname,self.Cid)
+        # return '{}/{}'.format(self.Cname,self.Cid)
+        return self.Cname
+
 
 class Restaurant(models.Model):
     Cid = models.ForeignKey(Category,on_delete=models.Aggregate)

@@ -17,21 +17,29 @@
           <li><a href="#">Home</a></li>
           <li class="visited sub"><a href="#">Categories</a>
               <ul>
-                  <li><a href="#">Chinese</a></li>
 
-                  <li><a href="#">Indian</a>
-                  <li><a href="#">Malay</a>
+                  {% for key, values in cat.items %}
+                <li>
+                    <a href="">  {{values}} </a>
+                </li>
 
-                  <li><a href="#">Japanese</a>
-                  <li><a href="#">Western</a>
-                  <li><a href="#">Thai</a>
+                {% endfor %}
 
-                  </li>
+                  <!--&lt;!&ndash;<li><a href="#">Japanese</a>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">Western</a>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">Thai</a>&ndash;&gt;-->
+
+                  <!--</li>-->
+
+                    <!--{% endfor %}-->
               </ul>
+
+
           </li>
           <li><a href="#">Gallery</a></li>
           <li><a href="#">Contact</a></li>
       </ul>
+
   </nav>
 
 
