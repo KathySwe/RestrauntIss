@@ -27,12 +27,7 @@
 
 
 <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.2.min.js'> </script>
-<script type='text/javascript'>
-$(document).ready(function(){
-     $('#valu').click(function(){
-         document.getElementById("demo").innerHTML = "Paragraph changed!";
-     }
-}
+
 </script>
 <h1>Food Review in Singapore</h1>
  <h2>By Nyein Chan Kyaw Swar, Kay Thi Swe Tun, Ei Theingi Swe</h2>
@@ -43,8 +38,11 @@ $(document).ready(function(){
               <ul>
 
                   {% for key, values in cat.items %}
-                <li id="catval" onclick="myfun()">
-                   <span id="valu" onclick="myfun()">{{ values }}</span>
+                <li id="catval" >
+                   <span onclick="myfun({{ key }} )" id="tes" value={{ key }} >{{ values }}</span>
+                   <p style="display: none;" id="value"  >
+                    {{ key }} hello
+                    </p>
                 </li>
                 {% endfor %}
 
@@ -58,7 +56,15 @@ $(document).ready(function(){
       </ul>
 
   </nav>
+<script>
+function myfun() {
+  var val=document.getElementById("value").innerHTML;
 
+  alert("key of category "+val);
+  alert( k+ "" );
+  val="";
+}
+</script>
 <p id="demo">djonrob</p>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
