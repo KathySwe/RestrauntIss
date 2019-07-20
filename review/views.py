@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from .models import Restaurant,Review,Comment,Category
 
 
-def index(request):
+def index(request,catid=0):
     context = {}
     category = Category.objects.all()
 

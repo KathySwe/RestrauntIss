@@ -3,23 +3,13 @@
 <head>
       {% load static %}
      {% load staticfiles %}
+
     <meta charset="UTF-8">
     <title>Title</title>
 
   <link rel="stylesheet" href="{% static 'home.css' %}" />
  <script src="{% static 'home.js' %}"></script>
 
-
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-  <!--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />-->
-  <!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>-->
-  <!--<script type="text/javascript">-->
-
-
-   <!--function myfun() {-->
-    <!--document.getElementById("demo").innerHTML = "Paragraph changed!";-->
-<!--}-->
-<!--})-->
 
 
 </head>
@@ -39,10 +29,13 @@
 
                   {% for key, values in cat.items %}
                 <li id="catval" >
-                   <span onclick="myfun({{ key }} )" id="tes" value={{ key }} >{{ values }}</span>
-                   <p style="display: none;" id="value"  >
-                    {{ key }} hello
-                    </p>
+
+                <a href="{% url 'review:index' key %}">{{ values }}</a> </li>
+
+                   <!--<span onclick="myfun({{ key }} )" id="tes" value={{ key }} >{{ values }}</span>-->
+                   <!--<p style="display: none;" id="value"  >-->
+                    <!--{{ key }} hello-->
+                    <!--</p>-->
                 </li>
                 {% endfor %}
 
@@ -57,11 +50,11 @@
 
   </nav>
 <script>
-function myfun() {
+function myfun(x) {
   var val=document.getElementById("value").innerHTML;
 
   alert("key of category "+val);
-  alert( k+ "" );
+  alert( x+ "" );
   val="";
 }
 </script>
